@@ -37,7 +37,7 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <img class="project-logo" height="100" src="images/company-logo-100.png" alt="">
+          <img class="project-logo" height="100" src="images/company_logo.jpg" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,7 +83,7 @@
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img src="images/banner/banner-1.png" class="d-view">
-              <img src="images/banner/banner-1-sm.jpg" class="m-view">
+              <img src="images/banner/banner-1-sm.png" class="m-view">
             </div>
           </div>
         </div>
@@ -817,29 +817,48 @@ Premier is not just a home—it’s a well-rounded lifestyle choice for modern u
       <h4 class="section-head">Floor Plan</h4>
       <h2 class="section-head-para">Your Vision, Our Floor Plans</h2>
 
-      <ul class="nav nav-pills floor-tab-head" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-            type="button" role="tab" aria-controls="pills-profile" aria-selected="true">2 BHK</button>
-
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-profile1-tab1" data-bs-toggle="pill" data-bs-target="#pills-profile1"
-            type="button" role="tab" aria-controls="pills-profile1" aria-selected="false">2 BHK M</button>
-            
-        </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-profile2-tab2" data-bs-toggle="pill" data-bs-target="#pills-profile2"
-            type="button" role="tab" aria-controls="pills-profile2" aria-selected="false">3 BHK </button>
-        </li>
-      </ul>
+    <ul class="nav nav-pills floor-tab-head" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" 
+      id="pills-profile-tab" 
+      data-bs-toggle="pill" 
+      data-bs-target="#pills-profile"
+      type="button" role="tab" 
+      aria-controls="pills-profile" 
+      aria-selected="true">  <!-- ✅ was false, now true -->
+      2 BHK
+    </button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" 
+      id="pills-profile1-tab1" 
+      data-bs-toggle="pill" 
+      data-bs-target="#pills-profile1"
+      type="button" role="tab" 
+      aria-controls="pills-profile1" 
+      aria-selected="false">
+      2 BHK M
+    </button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" 
+      id="pills-profile2-tab2" 
+      data-bs-toggle="pill" 
+      data-bs-target="#pills-profile2"
+      type="button" role="tab" 
+      aria-controls="pills-profile2" 
+      aria-selected="false">
+      3 BHK
+    </button>
+  </li>
+</ul>
       <div class="tab-content" id="pills-tabContent">
 
   <!-- 2 BHK -->
   <div class="tab-pane tab-imgs fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
     <div class="floor-sec">
-      <a href="images/floor-plan/2_BHK.jpeg" class="floor-zoom" title="2 BHK Floor Plan">
-        <img class="floor-plan-img img-fluid" src="images/floor-plan/2_BHK.jpeg" alt="2 BHK Floor Plan">
+      <a href="images/floor-plan/2_BHK.png" class="floor-zoom" title="2 BHK Floor Plan">
+        <img class="floor-plan-img img-fluid" src="images/floor-plan/2_BHK.png" alt="2 BHK Floor Plan">
         <span class="floor-zoom-hint">🔍 Click to enlarge</span>
       </a>
     </div>
@@ -848,8 +867,8 @@ Premier is not just a home—it’s a well-rounded lifestyle choice for modern u
   <!-- 2 BHK M -->
   <div class="tab-pane tab-imgs fade" id="pills-profile1" role="tabpanel" aria-labelledby="pills-profile1-tab1">
     <div class="floor-sec">
-      <a href="images/floor-plan/2_BHK_m.jpeg" class="floor-zoom" title="2 BHK M Floor Plan">
-        <img class="floor-plan-img img-fluid" src="images/floor-plan/2_BHK_m.jpeg" alt="2 BHK M Floor Plan">
+      <a href="images/floor-plan/2_BHK_m.png" class="floor-zoom" title="2 BHK M Floor Plan">
+        <img class="floor-plan-img img-fluid" src="images/floor-plan/2_BHK_m.png" alt="2 BHK M Floor Plan">
         <span class="floor-zoom-hint">🔍 Click to enlarge</span>
       </a>
     </div>
@@ -858,12 +877,13 @@ Premier is not just a home—it’s a well-rounded lifestyle choice for modern u
   <!-- 3 BHK -->
   <div class="tab-pane tab-imgs fade" id="pills-profile2" role="tabpanel" aria-labelledby="pills-profile2-tab2">
     <div class="floor-sec">
-      <a href="images/floor-plan/3_BHK.jpeg" class="floor-zoom" title="3 BHK Floor Plan">
-        <img class="floor-plan-img img-fluid" src="images/floor-plan/3_BHK.jpeg" alt="3 BHK Floor Plan">
+      <a href="images/floor-plan/3_BHK.png" class="floor-zoom" title="3 BHK Floor Plan">
+        <img class="floor-plan-img img-fluid" src="images/floor-plan/3_BHK.png  " alt="3 BHK Floor Plan">
         <span class="floor-zoom-hint">🔍 Click to enlarge</span>
       </a>
     </div>
   </div>
+  
 
 </div>
   </section>
@@ -1327,7 +1347,7 @@ Premier is not just a home—it’s a well-rounded lifestyle choice for modern u
               <!-- Slide 2 -->
               <div class="loc-slide">
                 <a class="lc-zoom-trigger" href="#lc-zoom-2" aria-label="Zoom image">
-                  <img src="images/location.jpg" alt="Neighbourhood" loading="lazy">
+                  <img src="images/location-old.jpg" alt="Neighbourhood" loading="lazy">
                 </a>
                 <div class="loc-caption">
                   <p class="loc-caption-tag">Neighbourhood</p>
@@ -1360,7 +1380,7 @@ Premier is not just a home—it’s a well-rounded lifestyle choice for modern u
 
     <div class="lc-lightbox" id="lc-zoom-2">
       <a class="lc-lightbox-close" href="#location-advantage" aria-label="Close">&#x2715;</a>
-      <img src="images/location.jpg" alt="Surrounding Area">
+      <img src="images/location-old.jpg" alt="Surrounding Area">
       <div class="lc-lightbox-caption">
         <p>Neighbourhood</p>
         <strong>Surrounding Area</strong>
@@ -1617,7 +1637,7 @@ through quality execution and reliable delivery.</p>
             'Content-Type': 'application/json'
           }
         })
-        return respose.ok
+        return response.ok
       }
       catch (error) {
         console.log(error);
