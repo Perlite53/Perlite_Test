@@ -1187,16 +1187,16 @@ a.overview-btn {
 }
 
 .highlight-img-section img.img-fluid {
-    border-radius: 1000px;
+    border-radius: 100px;
     width: 75%;
-    height: 600px;
+    height: 60px;
     object-fit: cover
 }
 .highlight-img-section {
     display: flex;
     justify-content: start;
     padding-left: 30px;
-    height: 400%;
+    height: 80%;
     width: 100%;  /* increase as needed */
     transform: translateY(60px);
 }
@@ -1492,7 +1492,7 @@ filter: invert(1) brightness(192);
 /* Gallery Section */
 .gallery-section {
     padding: 30px 0;
-    box-shadow: 0px 15px 20px -17px rgb(0 0 0 / 8%);
+    /*box-shadow: 0px 15px 20px -17px rgb(0 0 0 / 8%);*/
 }
 
 .grid-gallery-section {
@@ -1533,7 +1533,7 @@ filter: invert(1) brightness(192);
 
 section.location-advantages {
     padding: 40px 0;
-    box-shadow: 0px 15px 20px -17px rgb(0 0 0 / 8%);
+    /*box-shadow: 0px 15px 20px -17px rgb(0 0 0 / 8%);*/
 }
 
 /* Location Section */
