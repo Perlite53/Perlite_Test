@@ -504,7 +504,7 @@ section#builder_section .container {
     line-height: 80px;
 }
 
-.banner-price-typo {
+.banner-q-typo {
     display: flex;
     flex-direction: column;
     gap: 15px
@@ -1081,26 +1081,34 @@ a.overview-btn {
     }
 }
 
-
 /* Price section */
+
 .price-section {
     padding: 50px 0;
     position: relative;
     z-index: 2;
     overflow: hidden;
     box-shadow: 0px 15px 20px -17px rgb(0 0 0 / 8%);
+    background: #ffffff;
+}
+
+.price-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: color-mix(in srgb, var(--accent-color) 40%, white);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    z-index: -2;
 }
 
 .price-section::after {
     content: "";
-    inset: 300px -9% 0 -19%;
-    transform: rotate(343deg);
-    background: var(--accent-color) ;
-    height: 700px;
     position: absolute;
-    z-index: -1
+    inset: 0;
+    background: var(--accent-color);
+    clip-path: polygon(0 0, 55% 0, 40% 100%, 0 100%);
+    z-index: -1;
 }
-
 .price-details {
     position: relative;
     background: #e0dccf;
@@ -1160,7 +1168,6 @@ a.overview-btn {
     text-align: center;
     margin: 25px 0 20px
 }
-
 
 /* Highlight Section */
 .highlight-section {
@@ -2888,4 +2895,62 @@ button#SubmitQuery3 {
         border-right: 1px solid
     }
 
+   
+}
+/* ===== RERA Badge ===== */
+.rera-badge-wrapper {
+  margin: 10px 0 14px 0;
+}
+
+.rera-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid  rgba(255, 0, 179, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 8px;
+  padding: 8px 14px;
+  max-width: fit-content;
+}
+
+.rera-badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 0, 179, 0.5);
+  border-radius: 50%;
+  flex-shrink: 0;
+  color: #7e1953;
+}
+
+.rera-badge-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.rera-badge-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.rera-badge-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #7e1953;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.rera-badge-number {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.3px;
+  line-height: 1;
 }
