@@ -770,12 +770,14 @@ a.footer-address {
     display: inline-block;
     padding: 7px 20px;
     background: rgba(255, 255, 255, 0.9);
+    margin-bottom : 10px;
+    margin-top: 5px;
     letter-spacing: 1px;
     backdrop-filter: blur(10px);
     border-radius: 8px;
     width: fit-content
 }
-
+ 
 .banner-typology h3 {
     color: #000;
     font-size: 19px;
@@ -2590,6 +2592,7 @@ button#SubmitQuery3 {
     .banner-typology {
         padding: 8px 13px;
         margin-top: 6px;
+        margin-bottom: 20px;
         background: rgba(77, 64, 54, 0.16);
         letter-spacing: 1px;
         border-radius: 8px
@@ -2620,6 +2623,7 @@ button#SubmitQuery3 {
 
     .banner-typology h3 {
         font-size: 17px;
+        letter
     }
 
     /* Overview Section */
@@ -2898,6 +2902,8 @@ button#SubmitQuery3 {
    
 }
 /* ===== RERA Badge ===== */
+/* ===== RERA Badge - Gold Option A ===== */
+/* ===== RERA Badge - Gold Option A ===== */
 .rera-badge-wrapper {
   margin: 10px 0 14px 0;
 }
@@ -2906,51 +2912,55 @@ button#SubmitQuery3 {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid  rgba(255, 0, 179, 0.5);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 8px;
-  padding: 8px 14px;
+  background: rgba(10, 15, 30, 0.55);
+  border: 1.5px solid rgba(255, 195, 50, 0.70);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 10px 16px;
   max-width: fit-content;
+  box-shadow: 0 0 18px rgba(255, 185, 30, 0.30), inset 0 0 14px rgba(255, 200, 60, 0.06);
 }
 
 .rera-badge-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: rgba(255, 215, 0, 0.15);
-  border: 1px solid rgba(255, 0, 179, 0.5);
+  width: 34px;
+  height: 34px;
+  background: rgba(255, 200, 60, 0.15);
+  border: 1.5px solid rgba(255, 195, 50, 0.60);
   border-radius: 50%;
   flex-shrink: 0;
-  color: #7e1953;
+  color: #ffd060;
 }
 
 .rera-badge-icon svg {
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
 }
 
 .rera-badge-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 5px;
 }
 
 .rera-badge-title {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-  color: #7e1953;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  color: #ffd060;
   text-transform: uppercase;
   line-height: 1;
+  text-shadow: 0 0 10px rgba(255, 200, 50, 0.50);
 }
 
 .rera-badge-number {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.75);
-  letter-spacing: 0.3px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #ffe599;
+  letter-spacing: 0.4px;
   line-height: 1;
+  opacity: 0.90;
 }
