@@ -382,3 +382,71 @@ section#location-advantage .loc-progress{background:var(--hx-gold)}
 @media (max-width:1199px){.ct{padding:90px 28px}.ct-wrap{gap:40px}.ft{padding:56px 28px 24px}}
 @media (max-width:991px){.ct{padding:70px 20px}.ct-wrap{grid-template-columns:1fr;gap:40px}.ct-card{padding:26px 22px}.ft{padding:48px 20px 90px}.ft-top{flex-direction:column;align-items:flex-start}}
 @media (max-width:575px){.ct-actions .hx-btn{width:100%;text-align:center}}
+
+/* =========================================================
+   Motion
+   ========================================================= */
+@keyframes rvUp{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+@keyframes rvDown{from{opacity:0;transform:translateY(-100%)}to{opacity:1;transform:none}}
+@keyframes rvScale{from{opacity:0;transform:scale(.94) translateY(20px)}to{opacity:1;transform:none}}
+@keyframes kenburns{from{transform:scale(1.12)}to{transform:scale(1)}}
+@keyframes ctaGlow{0%,100%{box-shadow:0 0 0 0 rgba(217,180,106,.55)}60%{box-shadow:0 0 0 16px rgba(217,180,106,0)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,30px)}}
+@keyframes sheen{from{transform:translateX(-120%) skewX(-20deg)}to{transform:translateX(320%) skewX(-20deg)}}
+
+/* progress bar */
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:1000;background:linear-gradient(90deg,var(--hx-gold),#fff2cf,var(--hx-gold));transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+
+/* header + hero entrance (pure CSS, runs on load) */
+.header-section .navbar{animation:rvDown .8s cubic-bezier(.2,.7,.2,1) backwards}
+.hx-media img{animation:kenburns 2.4s cubic-bezier(.2,.7,.2,1) backwards}
+.hx-tag{animation:rvUp .8s cubic-bezier(.2,.7,.2,1) .15s backwards}
+.hx-title{animation:rvUp .9s cubic-bezier(.2,.7,.2,1) .3s backwards}
+.hx-sub{animation:rvUp .9s cubic-bezier(.2,.7,.2,1) .5s backwards}
+.hx-btns{animation:rvUp .9s cubic-bezier(.2,.7,.2,1) .65s backwards}
+.hx-rera{animation:rvUp .9s cubic-bezier(.2,.7,.2,1) .8s backwards}
+.hx-card{animation:rvScale 1s cubic-bezier(.2,.7,.2,1) .55s backwards}
+.hx-stats{animation:rvUp 1s cubic-bezier(.2,.7,.2,1) .9s backwards}
+
+/* scroll reveal (JS adds .rv, then .in). 'backwards' fill keeps hover transforms working afterwards */
+.rv{opacity:0}
+.rv.in{opacity:1;animation:rvUp .85s cubic-bezier(.2,.7,.2,1) var(--d,0ms) backwards}
+.ov-media.rv.in,.hl-media.rv.in,.fp-stage.rv.in,.ct-card.rv.in,.lc-list.rv.in,.loc-carousel-wrap.rv.in{animation-name:rvScale}
+
+/* ambient life */
+.hx-gold{position:relative;overflow:hidden}
+.hx-btns .hx-gold{animation:rvUp .9s cubic-bezier(.2,.7,.2,1) .65s backwards,ctaGlow 2.8s ease-out 2.4s infinite}
+.hx-btn.hx-gold::after{content:"";position:absolute;top:0;left:0;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);transform:translateX(-120%) skewX(-20deg);pointer-events:none}
+.hx-btn.hx-gold:hover::after{animation:sheen .9s ease}
+.ov-badge{animation:floaty 5s ease-in-out infinite}
+.hl-chip{animation:none}
+.hl::before,.ct::before{animation:drift 14s ease-in-out infinite}
+.gl::before{animation:drift 16s ease-in-out infinite reverse}
+
+/* hover micro-interactions */
+.am-cico,.pr-bhk,.lc-gico,.ov-ico{transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.am-card:hover .am-cico,.ov-card:hover .ov-ico,.lc-group:hover .lc-gico{transform:rotate(-8deg) scale(1.08)}
+.pr-card:hover .pr-bhk{transform:scale(1.1) rotate(8deg)}
+.hl-group li,.am-list li,.lc-row{transition:transform .25s ease,background .25s ease}
+.hl-group li:hover{transform:translateX(5px)}
+.am-list li:hover{transform:translateX(4px);box-shadow:0 6px 18px rgba(60,30,50,.08)}
+.hx-title em,.hl-title em,.pr-title em,.ov-title em{background-size:200% auto}
+.nav-item .nav-link{transition:background .25s,color .25s}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1!important}
+  .scroll-progress{display:none}
+}
+
+/* ---------- Hero image motion ---------- */
+@keyframes slowPan{from{transform:scale(1) translate3d(0,0,0)}to{transform:scale(1.07) translate3d(-1.2%,-.8%,0)}}
+@keyframes lightSweep{0%{transform:translateX(-120%) skewX(-18deg);opacity:0}12%{opacity:1}55%{opacity:1}100%{transform:translateX(330%) skewX(-18deg);opacity:0}}
+.hx-media img{position:absolute;left:-3%;top:-6%;width:106%;height:112%;max-width:none;will-change:transform,translate;
+  animation:kenburns 2.4s cubic-bezier(.2,.7,.2,1) backwards,slowPan 26s ease-in-out 2.4s infinite alternate}
+.hx-media::after{z-index:1}
+.hx-media::before{content:"";position:absolute;top:-10%;left:0;width:34%;height:120%;z-index:2;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,236,200,.10) 30%,rgba(255,244,222,.24) 50%,rgba(255,236,200,.10) 70%,transparent);
+  mix-blend-mode:screen;transform:translateX(-120%) skewX(-18deg);animation:lightSweep 10s ease-in-out 3s infinite}
+@media (max-width:991px){.hx-media img{top:-3%;height:106%}.hx-media::before{width:60%}}
