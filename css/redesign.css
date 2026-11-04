@@ -450,3 +450,83 @@ section#location-advantage .loc-progress{background:var(--hx-gold)}
   background:linear-gradient(90deg,transparent,rgba(255,236,200,.10) 30%,rgba(255,244,222,.24) 50%,rgba(255,236,200,.10) 70%,transparent);
   mix-blend-mode:screen;transform:translateX(-120%) skewX(-18deg);animation:lightSweep 10s ease-in-out 3s infinite}
 @media (max-width:991px){.hx-media img{top:-3%;height:106%}.hx-media::before{width:60%}}
+
+/* =========================================================
+   Mobile optimisation (phones <= 767px)
+   ========================================================= */
+@media (max-width:767px){
+  /* iOS zooms into inputs smaller than 16px */
+  input.form-control,.form-control,select.form-control,textarea.form-control{font-size:16px!important}
+
+  /* Hero: compact, fits one screen; form lives behind the buttons / popup */
+  .hx-card{display:none}
+  .hx-inner{padding:104px 20px 26px}
+  .hx-title{font-size:36px}
+  .hx-sub{margin-top:16px}
+  .hx-btns{margin-top:26px;gap:12px}
+  .hx-tag{font-size:11px;padding:7px 14px;margin-bottom:18px}
+  .hx-media img.m-view{object-position:50% 40%}
+  .hx-media::after{background:linear-gradient(180deg,rgba(25,10,25,.30) 0%,rgba(25,10,25,.50) 40%,rgba(25,10,25,.86) 100%)}
+  .hx-stats{margin:0 16px}
+  .hx-stats div{padding:16px 6px}
+  .hx-stats b{font-size:22px}
+  .hx-stats span{font-size:10px;letter-spacing:.1em}
+
+  /* tighter section rhythm */
+  .ov,.pr,.am,.fp,.gl,.ct{padding-top:56px!important;padding-bottom:56px!important}
+  .hl{padding-top:56px;padding-bottom:56px}
+  section#location-advantage{padding:56px 0}
+  .hl-head,.pr-head,.am-headtxt,.fp-head,.gl-head,.lc-head{margin-bottom:30px}
+  .ov-title,.hl-title,.pr-title,.am-title,.fp-title,.gl-title,.lc-title,.ct-title{font-size:30px}
+
+  /* swipeable carousels instead of long stacks */
+  .pr-grid,.am-grid,.ov-cards{display:flex!important;grid-template-columns:none!important;max-width:none!important;gap:14px;
+    overflow-x:auto;overflow-y:visible;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+    margin:0 -20px!important;padding:6px 20px 22px;scroll-padding-left:20px}
+  .pr-grid::-webkit-scrollbar,.am-grid::-webkit-scrollbar,.ov-cards::-webkit-scrollbar{display:none}
+  .pr-card,.am-card{flex:0 0 84%;scroll-snap-align:start}
+  .ov-card{flex:0 0 88%;scroll-snap-align:start;align-content:start}
+  .pr-card:hover,.am-card:hover,.ov-card:hover{transform:none}
+  /* cards inside horizontal scrollers must not wait for vertical reveal */
+  .pr-card.rv,.am-card.rv,.ov-card.rv{opacity:1!important}
+  .pr-card.rv.in,.am-card.rv.in,.ov-card.rv.in{animation:none}
+  .pr-head::after,.am-headtxt::after{content:"Swipe to see all  \2192";display:block;margin-top:12px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#8a7f8e}
+  .am-card{padding:22px 16px}
+  .pr-card{padding:26px 22px 24px}
+  .pr-price{font-size:42px}
+
+  /* overview + highlights */
+  .ov-img{height:400px}
+  .ov-lead{font-size:16.5px;margin-bottom:22px}
+  .hl-media{height:360px}
+  .hl-group{padding:22px 20px}
+  .hl-group li{font-size:15px}
+
+  /* gallery: shorter mosaic */
+  .gl-grid{grid-template-rows:230px 150px 150px!important}
+
+  /* location */
+  .lc-row{padding:10px 0;font-size:14.5px}
+
+  /* contact + footer */
+  .ct-about p{font-size:16px}
+  .ft-nav{gap:2px 22px}
+  .ft-nav a{padding:9px 0}
+  .ft{padding-bottom:96px}
+}
+@media (max-width:360px){
+  .hx-title{font-size:32px}
+  .hx-stats div{flex:1 1 50%}
+}
+/* landscape phones */
+@media (max-height:520px) and (orientation:landscape){
+  .hx{min-height:0}
+  .hx-inner{padding-top:96px}
+}
+
+/* grid children must be allowed to shrink so inner carousels scroll instead of widening the page */
+.ov-wrap>*,.hl-grid>*,.fp-grid>*,.ct-wrap>*,.loc-adv-grid>*,.hl-groups>*{min-width:0}
+
+/* Menu icon stays white on the dark header (old stylesheet made it black once scrolled) */
+.header-section.fixed span.navbar-toggler-icon{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E")}
+.header-section .navbar-toggler{border:0;padding:10px;min-width:44px;min-height:44px}
