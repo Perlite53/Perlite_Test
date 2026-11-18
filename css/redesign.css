@@ -554,3 +554,70 @@ section#location-advantage .loc-progress{background:var(--hx-gold)}
 .gl-cap{position:absolute;left:16px;bottom:16px;right:70px;z-index:2;color:#fff;font-size:13px;font-weight:600;letter-spacing:.02em;text-shadow:0 1px 8px rgba(0,0,0,.6);pointer-events:none}
 .gl-tile a.with-caption::after{opacity:.85}
 @media (max-width:767px){.pp-head{margin:56px 0 28px;padding-top:44px}}
+
+/* Perlite Premier gallery: 8-tile mosaic */
+.gl-sub{color:rgba(255,255,255,.72);font-size:15px;margin:14px 0 0}
+.gl-g8{grid-template-rows:repeat(3,250px)}
+.gl-g8 .gl-t1{grid-column:1 / span 2;grid-row:1 / span 2}
+.gl-g8 .gl-t6{grid-column:1 / span 2;grid-row:3}
+@media (max-width:1199px){.gl-grid.gl-g8{grid-template-rows:repeat(3,210px)}}
+@media (max-width:991px){
+  .gl-grid.gl-g8{grid-template-columns:1fr 1fr;grid-template-rows:260px repeat(4,170px)!important;gap:12px}
+  .gl-g8 .gl-t1{grid-column:1 / -1;grid-row:1}
+  .gl-g8 .gl-t6{grid-column:1 / -1;grid-row:auto}
+}
+@media (max-width:575px){.gl-grid.gl-g8{grid-template-rows:220px repeat(4,140px)!important}}
+
+/* ================= PHONE-ONLY LAYOUT (<=767px) ================= */
+.mobile-section.mb-bar{display:none}
+@media (max-width:767px){
+  html{scroll-padding-top:70px}
+  body{padding-bottom:calc(66px + env(safe-area-inset-bottom))}
+  #query-fix-btn{display:none!important}
+
+  /* sticky action bar */
+  .mobile-section.mb-bar{display:grid!important;grid-template-columns:1fr 1.15fr 1.7fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:rgba(32,10,26,.96);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:1px solid rgba(217,180,106,.3);box-shadow:0 -10px 30px rgba(0,0,0,.28)}
+  .mb-bar a{display:flex;align-items:center;justify-content:center;gap:7px;height:46px;border-radius:12px;font-size:14px;font-weight:800;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,.22);width:auto;text-align:center;white-space:nowrap}
+  .mb-bar a:not(:last-child){border-right:1px solid rgba(255,255,255,.22)}
+  .mb-bar svg{width:19px;height:19px;flex:none}
+  .mb-bar .mb-wa{background:#1fa855;border-color:#1fa855}
+  .mb-bar .mb-book{background:var(--hx-gold);border-color:var(--hx-gold);color:var(--hx-ink)}
+  .mb-bar a:active{transform:scale(.97)}
+
+  /* tighter vertical rhythm */
+  .ov,.hl,.pr,.am,.fp,.gl,.ct{padding-top:52px!important;padding-bottom:52px!important}
+  section#location-advantage{padding:52px 0!important}
+  .hl-head,.gl-head,.lc-head{margin-bottom:28px}
+  .pp-head{margin:44px 0 24px;padding-top:36px}
+
+  /* gallery: swipeable rows instead of tall stacks */
+  .gl-grid,.gl-grid.gl-g8,.gl-grid.pp-grid{display:flex!important;gap:12px;overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scroll-padding:0 20px;margin:0 -20px;padding:4px 20px 16px;grid-template-rows:none!important;scrollbar-width:none}
+  .gl-grid::-webkit-scrollbar{display:none}
+  .gl-grid .gl-tile{flex:0 0 80%;height:240px;scroll-snap-align:center;grid-column:auto!important;grid-row:auto!important}
+  .gl-grid::after{content:"";flex:0 0 1px}
+  .gl-head+.gl-grid::before,.pp-head+.gl-grid::before{content:none}
+  .gl-sub::after{content:"  ·  swipe \2192"}
+  .pp-sub{margin-bottom:0}
+
+  /* collapsible groups (JS adds .m-js) */
+  .m-js .hl-gh,.m-js .lc-gh{cursor:pointer;position:relative;padding-right:34px;-webkit-tap-highlight-color:transparent}
+  .m-js .hl-gh::after,.m-js .lc-gh::after{content:"";position:absolute;right:2px;top:50%;width:9px;height:9px;border-right:2px solid var(--hx-gold);border-bottom:2px solid var(--hx-gold);transform:translateY(-70%) rotate(45deg);transition:transform .25s}
+  .m-js .m-open>.hl-gh::after,.m-js .m-open>.lc-gh::after{transform:translateY(-30%) rotate(-135deg)}
+  .m-js .hl-group:not(.m-open) ul{display:none}
+  .m-js .lc-group:not(.m-open) .lc-row{display:none}
+  .m-js .hl-group{padding-top:18px;padding-bottom:18px}
+  .m-js .lc-group:not(.m-open){padding-bottom:16px}
+  .lc-gh::after{border-color:#8a1c5c!important}
+
+  /* about developer: clamp */
+  .m-clamp:not(.m-expanded) p:nth-of-type(n+2){display:none}
+  .m-clamp .ct-values{margin-top:18px}
+  .m-more{background:none;border:0;color:var(--hx-gold);font-weight:800;font-size:15px;padding:6px 0 14px;text-decoration:underline;text-underline-offset:3px}
+
+  /* lighter on phones: no looping decorative animation */
+  .gl::before{animation:none}
+}
+@media (max-width:767px){
+  .hx-media{height:min(96vw,400px)}
+  .hx-inner{margin-top:-84px}
+}
